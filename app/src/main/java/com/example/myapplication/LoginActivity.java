@@ -1,7 +1,7 @@
 package com.example.myapplication;
 
 
-import android.app.ProgressDialog;
+//import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     TextView textviewSingin;
     TextView textviewMessage;
     TextView textviewFindPassword;
-    ProgressDialog progressDialog;
+    //ProgressDialog progressDialog;
     //define firebase object
     FirebaseAuth firebaseAuth;
 
@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         textviewMessage = (TextView) findViewById(R.id.textviewMessage);
         textviewFindPassword = (TextView) findViewById(R.id.textViewFindpassword);
         buttonSignin = (Button) findViewById(R.id.buttonSignup);
-        progressDialog = new ProgressDialog(this);
+        //progressDialog = new ProgressDialog(this);
 
         //button click event
         buttonSignin.setOnClickListener(this);
@@ -75,15 +75,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
 
-        progressDialog.setMessage("로그인중입니다. 잠시 기다려 주세요...");
-        progressDialog.show();
+        //progressDialog.setMessage("로그인중입니다. 잠시 기다려 주세요...");
+        //progressDialog.show();
 
         //logging in the user
         firebaseAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressDialog.dismiss();
+                        //progressDialog.dismiss();
                         if(task.isSuccessful()) {
                             finish();
                             startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
@@ -107,6 +107,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             startActivity(new Intent(this, MainActivity.class));
         }
         if(view == textviewFindPassword) {
+            startActivity(new Intent(this, FindActivity.class));
             finish();
         }
     }

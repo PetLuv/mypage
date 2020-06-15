@@ -4,31 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FBFBFB"
     android:orientation="vertical"
-    android:background="#7ab9fd"
     tools:context="com.js.firebaseauthentication.MainActivity">
 
     <TextView
-        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
-        android:textSize="23dp"
-        android:textColor="@color/colorAccent"
-        android:text="암호찾기" />
+        android:text="암호찾기"
+        android:textColor="@android:color/black"
+        android:textSize="23dp" />
 
     <TextView
-        android:text="등록한 Email을 입력해 주세요/"
-        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="등록한 Email을 입력해 주세요/" />
 
     <EditText
         android:id="@+id/editTextUserEmail"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:layout_gravity="center_horizontal"
+        android:layout_margin="10dp"
         android:hint="Enter email"
         android:inputType="textEmailAddress" />
 
@@ -36,15 +36,15 @@
         android:id="@+id/buttonFind"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
         android:layout_gravity="center_horizontal"
+        android:layout_margin="15dp"
         android:text="Email 발송" />
 
     <TextView
-        android:layout_gravity="center_horizontal"
-        android:textColor="@color/colorAccent"
         android:id="@+id/textviewMessage"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/colorAccent" />
 
 </LinearLayout>

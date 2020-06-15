@@ -1,6 +1,6 @@
 package com.example.myapplication;
 
-import android.app.ProgressDialog;
+//import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +23,7 @@ public class FindActivity extends AppCompatActivity implements View.OnClickListe
     private EditText editTextUserEmail;
     private Button buttonFind;
     private TextView textviewMessage;
-    private ProgressDialog progressDialog;
+    //private ProgressDialog progressDialog;
     //define firebase object
     private FirebaseAuth firebaseAuth;
 
@@ -36,7 +36,7 @@ public class FindActivity extends AppCompatActivity implements View.OnClickListe
 
         editTextUserEmail = (EditText) findViewById(R.id.editTextUserEmail);
         buttonFind = (Button) findViewById(R.id.buttonFind);
-        progressDialog = new ProgressDialog(this);
+        //progressDialog = new ProgressDialog(this);
         firebaseAuth = FirebaseAuth.getInstance();
 
         buttonFind.setOnClickListener(this);
@@ -46,8 +46,8 @@ public class FindActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if(view == buttonFind){
-            progressDialog.setMessage("처리중입니다. 잠시 기다려 주세요...");
-            progressDialog.show();
+            //progressDialog.setMessage("처리중입니다. 잠시 기다려 주세요...");
+            //progressDialog.show();
             //비밀번호 재설정 이메일 보내기
             String emailAddress = editTextUserEmail.getText().toString().trim();
             firebaseAuth.sendPasswordResetEmail(emailAddress)
@@ -61,7 +61,7 @@ public class FindActivity extends AppCompatActivity implements View.OnClickListe
                             } else {
                                 Toast.makeText(FindActivity.this, "메일 보내기 실패!", Toast.LENGTH_LONG).show();
                             }
-                            progressDialog.dismiss();
+                            //progressDialog.dismiss();
                         }
                     });
 
